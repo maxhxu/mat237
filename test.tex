@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{aten}
+
+\newcommand{\documenttitle}{aten.sty}
+\newcommand{\authorname}{atentwo}
+
+\begin{document}
+
+\title{\documenttitle}
+\rhead{\textbf{\small \documenttitle}}
+\lhead{\textbf{\small \authorname}}
+\author{\authorname}
+\maketitle
+
+\tableofcontents 
+
+\newpage
+
+\section{Introduction}
+
+\texttt{aten.sty} provides a simple and lightweight solution to make your LaTeX documents prettier. This is heavily inspired by \texttt{evan.sty}.
+
+\subsection{How to Use}
+
+Prepend the following to your tex file:
+\begin{verbatim}
+\documentclass{article}
+\usepackage{aten}
+
+\newcommand{\documenttitle}{DOCUMENT TITLE}
+\newcommand{\authorname}{AUTHOR NAME}
+
+\begin{document}
+
+\title{\documenttitle}
+\rhead{\textbf{\small \documenttitle}}
+\lhead{\textbf{\small \authorname}}
+\author{\authorname}
+\maketitle
+
+\tableofcontents
+\newpage
+
+% Content goes here
+% \input{yourfile.tex} \newpage
+% ...
+
+\end{document}
+\end{verbatim}
+
+\subsection{Environments}
+
+These are what the environments look like. There's also Lemma, Corollary, and Observation. This is what a somewhat long paragraph looks like, with multiple lines.
+
+The next paragraph has no indent.
+
+\begin{definition}[Definition]
+This is the definition environment.
+\end{definition}
+
+Multiline definitions should use definitionbox instead.
+
+\begin{definitionbox}
+This is the definition box environment.
+
+\begin{itemize}
+\item This is a multiline definition
+\item There are many points
+\end{itemize}
+\end{definitionbox}
+
+\begin{simplethm}[Simple Theorem]
+This is the simplethm environment.
+\end{simplethm}
+
+\begin{proof}
+A proof of the simple theorem.
+\end{proof}
+
+There might be more text at the end of the proof.
+
+\begin{theorem}[A Theorem] \label{thm:oddposintdivby5}
+For odd, positive integers $k$, $1 + 4^k$ is divisible by 5. 
+\end{theorem}
+
+\begin{proof}
+We prove that \( 1 + 4^k \equiv 0 \pmod{5} \) for all odd, positive integers \( k \).
+Note that \( 4 \equiv -1 \pmod{5} \)
+\[
+4^k \equiv (-1)^k \pmod{5}.
+\]
+For odd \( k \), \( (-1)^k = -1 \), so:
+\[
+4^k \equiv -1 \pmod{5} \Rightarrow 1 + 4^k \equiv 1 + (-1) = 0 \pmod{5}.
+\]
+Hence, \( 1 + 4^k \) is divisible by 5 for all odd \( k \in \mathbb{Z}^+ \).
+\end{proof}
+
+\begin{simplethm}
+A theorem immediately succeeds the proof.
+\end{simplethm}
+
+\begin{simplethm}
+Another theorem
+\end{simplethm}
+
+\begin{remark}
+This is a remark. The proof environment comes from amsthm.
+\end{remark}
+
+\begin{example}[An Example]
+This is an example.
+
+This example has more than one line.
+\end{example}
+
+More text.
+
+\subsection{More Features}
+
+Links are supported. \autoref{thm:oddposintdivby5} can either be proven through induction on the odd positive integers, or through a modular arithmetic argument.
+
+There is a TODO tag. Typing \texttt{\textbackslash todo[text]} produces \todo[text]. Typing \texttt{\textbackslash todo} gives \todo.
+
+\section{Conclusion}
+
+Last updated \date{\today}.
+
+\end{document}
