@@ -1,0 +1,35 @@
+\section{Topology}
+
+Let $A \subseteq \mathbb{R}^n$, $\varepsilon \in \mathbb{R}$, $\varepsilon > 0$. For some point $\v{p} \in \mathbb{R}^N$, define the $\varepsilon$-ball at $\v{p}$ as
+\[
+    B_\varepsilon(\v{p}) = \{ \v{x} \in \mathbb{R}^n : \norm{\v{x} - \v{p}} < \varepsilon \}
+\]
+Say that $\varepsilon$ the radius of the ball.
+
+We want to characterize some point $\v{p} \in \mathbb{R}^n$ relative to $A \subseteq \mathbb{R}^n$.
+
+\begin{definition}
+    \leavevmode
+    \begin{description}
+        \item[Interior Point]
+            $\v{p}$ is an interior point of $A$ if there exists $\varepsilon \in \mathbb{R}$, $\varepsilon > 0$ with $B_\varepsilon(\v{p}) \subseteq A$.
+
+        \item[Boundary Point]
+            $\v{p}$ is a boundary point of $A$ if for every $\varepsilon \in \mathbb{R}$, $\varepsilon > 0$ there exists points $\v{a}, \v{b} \in B_\varepsilon(\v{p})$ with $\v{a} \in A$, $\v{b} \not \in A$.
+
+        \item[Limit Point]
+            $\v{p}$ is a limit point of $A$ if for every $\varepsilon \in \mathbb{R}$, $\varepsilon > 0$, exists a point $\v{q} \in B_{\varepsilon}(\v{p}) \cap A$ with $\v{p} \ne \v{q}$.
+    \end{description}
+
+    The set of all interior points, all boundary points, and all limit points of $A$ are respectively written $A^o$, $\partial A$, $A^*$.
+
+    The closure of $A$, written $\overline{A}$, is $A \cup A^*$.
+
+\end{definition}
+\begin{theorem}
+    Let $A, B \subseteq \mathbb{R}^n$.
+
+    Have $A \subseteq \overline{A}$, $\overline{A \cup B} = \overline{A} \cup \overline{B}$, $\overline{A \cap B} \subseteq \overline{A} \cup \overline{B}$, $\overline{A \times B} = \overline{A} \times \overline{B}$.
+
+    Furthermore, $A^o \subseteq A \subseteq \overline{A}$, $A^o \cap \partial A = \emptyset$, $\overline{A} = A^o \cup \partial A, \partial A = \overline{A} \setminus A^o$.
+\end{theorem}

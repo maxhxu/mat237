@@ -1,0 +1,34 @@
+\documentclass[11pt]{article}
+\usepackage{styles/aten}
+\usepackage{mathtools}
+
+\newcommand{\documenttitle}{MAT237 Summary}
+\newcommand{\authorname}{Authors}
+
+\setkeys{Gin}{width=0.95\textwidth}
+
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\set}{\{}{\}}
+\newcommand{\m}[1]{\mathbf{#1}}
+\renewcommand{\v}[1]{\mathbf{#1}}
+\newcommand{\graph}[1]{\mathrm{graph}(#1)}
+
+
+\newcommand{\gline}{%
+    \noindent\makebox[\linewidth]{\color{gray}\rule{\linewidth}{0.4pt}}%
+}
+
+\begin{document}
+
+\title{\documenttitle}
+\rhead{\textbf{\small \documenttitle}}
+\lhead{\textbf{\small \authorname}}
+\author{\authorname}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\input{parts/foundations.tex} \newpage
+
+\end{document}

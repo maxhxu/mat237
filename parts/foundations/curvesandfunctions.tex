@@ -1,0 +1,51 @@
+\section{Curves and Functions}
+
+A more detailed look at parametric curves comes later in the vector calculus section. For now, a curve is some function $\gamma : I \to \mathbb{R}^n$, with $I \subseteq \mathbb{R}^n$.
+
+\begin{definition}
+    Some terminology: at time $t \in I$, define
+    \begin{description}
+        \item[Position] $\gamma(t)$
+        \item[Velocity] $\gamma'(t) := \displaystyle \lim_{h \to 0} \frac{\gamma(t+h) - \gamma(t)}{h}$
+        \item[Acceleration] $\gamma''(t) := \displaystyle \lim_{h \to 0} \frac{\gamma'(t+h) - \gamma'(t)}{h}$
+        \item[Speed] $\norm{\gamma'(t)}$
+        \item[Unit Tangent] $T(t) = \frac{\gamma'(t)}{\norm{\gamma'(t)}}$
+        \item[Unit Normal] $N(t) = \frac{T'(t)}{\norm{T'(t)}}$
+        \item[Unit Binormal] $B(t) = T(t) \times N(t)$
+        \item[Trace] $\gamma(I)$
+    \end{description}
+\end{definition}
+
+We can write $\gamma$ in terms of its components. $\gamma = (\gamma_1, \dots, \gamma_n)$ with each $\gamma_i : \mathbb{R} \to \mathbb{R}$. When differentiating, we can differentiate component-wise, since $\gamma'(t) = (\gamma_1'(t), \dots, \gamma_n'(t))$.
+
+When both $T(t)$ and $N(t)$ exist, they are orthogonal, as in $T(t) \cdot N(t) = \v{0}$. Indeed,
+\begin{align*}
+    \norm{T(t)} &= 1 \\
+    \frac{d}{dt} [T(t) \cdot T(t)] &= \frac{d}{dt}[1] \\
+    2T(t) \cdot T'(t) &= 0
+\end{align*}
+
+Since $T(t)$ and $N(t)$ are orthogonal, get a unique \textbf{unit binormal} through $B(t) = T(t) \times N(t)$.
+
+\gline
+
+We now work with functions $f : A \to \mathbb{R}$, $A \subseteq \mathbb{R}^n$.
+
+\begin{definition}[$k$-Level Set]
+    For $k \in \mathbb{R}$, the level set of $f$ at $k$ is $\set{ \v{x} \in \mathbb{R}^n : f(\v{x}) = k }$
+\end{definition}
+
+\begin{definition}[Graph]
+    $\graph{f} = \set{(\v{x}, f(\v{x})) : \v{x} \in A}$
+\end{definition}
+
+
+\begin{definition}[Slices]
+    The $i$-coordinate slice of the graph of $f$ at $c \in \mathbb{R}$ is $\graph{f \big|_S}$, with $S = \set{\m{x} \in A : x_i = c}$.
+\end{definition}
+
+The ideas here generalize to functions $f: A \to \mathbb{R}^m$. The analogue to $k$-level sets is $f^{-1}(\{ \m{k} \})$.
+
+\gline 
+
+Coordinate transformations and vector fields both relate to functions $f: \mathbb{R}^n \to \mathbb{R}^n$, covered in the differential and vector calculus portion respectively.
